@@ -1,7 +1,9 @@
-const container = document.querySelector("#container");
+let slider = document.getElementById("myRange");
+let output = document.getElementById("demo");
+output.innerHTML = slider.value;
 
-let htmlString = ""
-for (let i = 0; i < 16; i++) {
-    htmlString += `<div>${i}</div>`;
-};
-container.innerHTML = htmlString;
+slider.oninput = function() {
+    output.innerHTML = this.value;
+}
+
+let num = slider.value;
