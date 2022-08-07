@@ -6,4 +6,20 @@ slider.oninput = function() {
     output.innerHTML = this.value;
 }
 
-let num = slider.value;
+let val = slider.value;
+function genGrid(num) {
+    let container = document.querySelector("#container");
+    for(let i = 0;i < num; i++) {
+        let row = document.createElement("div");
+        row.className = "row";
+        for(let j = 0; j <= num; j++) {
+            let cell = document.createElement("div");
+            cell.className = "cell";
+            cell.innerText = (i * num) + j;
+            row.appendChild(cell);
+        }
+        container.appendChild(row);
+    }
+}
+
+genGrid(val);
